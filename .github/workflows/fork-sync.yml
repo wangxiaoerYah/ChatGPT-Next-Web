@@ -1,0 +1,21 @@
+name: Sync Fork
+
+on:
+  schedule:
+    - cron: '1 11 * * 6' # every month
+  workflow_dispatch: # on button click
+
+jobs:
+  sync:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tgymnich/fork-sync@v1.9
+        with:
+          auto_approve: true
+          retry_after: 4
+          ignore_fail: true
+          token: ${{ secrets.SYNC_TOKEN }}
+          base: main
+          head: main
