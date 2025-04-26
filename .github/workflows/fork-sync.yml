@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: tgymnich/fork-sync@v2.0
+      - uses: tgymnich/fork-sync@v2.0.10
         with:
           auto_approve: true
           merge_method: rebase
