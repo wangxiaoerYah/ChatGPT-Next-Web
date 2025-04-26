@@ -2,7 +2,7 @@ name: Sync Fork
 
 on:
   schedule:
-    - cron: '1 11 * * 6' # every month
+    - cron: '0 7 */2 * *' # every month
   workflow_dispatch: # on button click
 
 jobs:
@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: tgymnich/fork-sync@v1.9
+      - uses: tgymnich/fork-sync@v2.0
         with:
           auto_approve: true
-          retry_after: 4
+          merge_method: rebase
+          pr_title: 同步源仓库
           ignore_fail: true
           token: ${{ secrets.SYNC_TOKEN }}
           base: main
