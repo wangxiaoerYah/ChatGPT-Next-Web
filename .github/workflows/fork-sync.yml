@@ -18,5 +18,7 @@ jobs:
           pr_title: 同步源仓库
           ignore_fail: true
           token: ${{ secrets.SYNC_TOKEN }}
+          owner: ChatGPTNextWeb
+          repo: NextChat
           base: main
           head: main
